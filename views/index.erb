@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Find your rubyforge user id</title>
+    <style type="text/css" media="screen">
+      body {
+        font-size: 200%;
+        text-align: center;
+        margin: auto 0;
+        margin-top: 5em;
+        font-family: Courier, monospace;
+      }
+
+      label {
+        display: block;
+      }
+
+      input[type=text] {
+        font-size: 80%;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- A tip of the hat to http://caius.github.com/github_id/ -->
+
+    <form id="input" action="/" accept-charset="utf-8">
+      <h1>Find RubyForge User ID</h1>
+      <input type="text" name="user" id="user" placeholder="<%= @user ? @user['user_name'] : "RubyForge User" %>" />
+
+      <br />
+      <input type="submit" value="Find ID &rarr;" />
+    </form>
+
+<% if @user %>
+    <div id="success">
+      <h1><span id="username"><%=h @user['user_name'] %></span> <span id="realname">(<%=h @user['realname'] %>)</span> is rubyforge user #<span id="id"><%=h @user['user_id'] %></span></h1>
+      <a href="https://twitter.com?status=<%= URI.escape "Found out I'm RubyForge user #{@user['user_id']} by using http://rubyforge-id.heroku.com/?user=#{@user['user_name']}" %>">Tweet this</a>
+    </div>
+<% end %>
+
+  </body>
+
+</html>
