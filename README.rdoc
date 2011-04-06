@@ -1,0 +1,38 @@
+= RubyForge ID App
+
+Prove your worth and establish your credibility in the Ruby community
+by promoting your {RubyForge User ID}[http://rubyforge-id.heroku.com/].
+If you don't have a RubyForge User ID, I suppose you could use the
+{GitHub User ID}[http://caius.github.com/github_id/] app instead.
+
+== Camping
+
+This is using Camping. Deal.
+
+== RubyForge Credentials
+
+To run the app locally you need to have your RubyForge credentials in
+your environment variables. Check out the
+{RubyForge API}[http://api.rubyforge.org/] for additional details.
+
+== Deploying to Heroku
+
+Heroku[http://heroku.com/] makes deploying little apps like this easy
+and fun. Once you have this repo locally you can create a new project
+by the following:
+
+  heroku create my-rubyforge-id
+
+If you don't have an account you will be prompted to create one.
+
+After the project is created you need to add your RubyForge credentials
+to Heroku with the following:
+
+  heroku config:add RUBYFORGE_USERNAME=rubyhipster
+  heroku config:add RUBYFORGE_PASSWORD=awesome
+
+Then deploying is as simple as pushing to the "heroku" remote:
+
+  git push heroku master
+
+Done. _Easy_.
